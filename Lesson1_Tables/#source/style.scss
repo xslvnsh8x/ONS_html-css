@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import "normalize";
+@import "variables";
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.wrap {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.standings {
+
+  &__heading {
+    text-align: center;
+    margin-bottom: 16px;
+    color: #14213d;
+  }
+
+  &__table {
+    background: white;
+    border-radius: 10px;
+    border-collapse: collapse;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+    th {
+      color: #e5e5e5;
+      background: #14213d;
+      border-bottom: 5px solid #9ea7af;
+      border-right: 1px solid #343a45;
+      font-size: 24px;
+      font-weight: 100;
+      padding: 20px;
+      text-align: left;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+      vertical-align: middle;
+    }
+
+    th:first-child {
+      border-top-left-radius: 10px;
+    }
+
+    th:last-child {
+      border-top-right-radius: 10px;
+      border-right: none;
+    }
+
+    tr {
+      border-top: 1px solid #c1c3d1;
+      border-bottom: 1px solid #c1c3d1;
+      color: #666b85;
+      font-size: 16px;
+      font-weight: normal;
+      text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+    }
+
+    tr:hover td {
+      background: #fca311;
+      color: white;
+      border-top: 1px solid #fca311;
+    }
+
+    tr:hover a {
+      color: white;
+    }
+
+    tr:first-child {
+      border-top: none;
+    }
+
+    tr:last-child {
+      border-bottom: none;
+    }
+
+    tr:nth-child(odd) td {
+      background: #ebebeb;
+    }
+
+    tr:nth-child(odd):hover td {
+      background: #fca311;
+    }
+
+    tr:last-child td:first-child {
+      border-bottom-left-radius: 10px;
+    }
+
+    tr:last-child td:last-child {
+      border-bottom-right-radius: 10px;
+    }
+
+    td {
+      background: #ffffff;
+      padding: 6px 20px 6px 20px;
+      text-align: left;
+      vertical-align: middle;
+      font-weight: 300;
+      font-size: 18px;
+      text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+      border-right: 1px solid #c1c3d1;
+      transition: all 0.2s ease;
+    }
+
+    td:last-child {
+      border-right: 0;
+    }
+
+    td a {
+      color: #666b85;
+      transition: all 0.2s ease;
+    }
+
+    td a:hover {
+      color: #14213d;
+    }
+
+    &__teamLogo {
+      height: 37px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      &-tmp {
+        background-image: $tampa;
+      }
+
+      &-stl {
+        background-image: $stLouise;
+      }
+
+      &-wsh {
+        background-image: $capitals;
+      }
+
+      &-pit {
+        background-image: $penguins;
+      }
+
+      &-chi {
+        background-image: $chicago;
+      }
+
+      &-lak {
+        background-image: $kings;
+      }
+
+      &-bos {
+        background-image: $boston;
+      }
+    }
+  }
+}
