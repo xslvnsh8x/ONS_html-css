@@ -1,0 +1,146 @@
+@import "normalize";
+@import "mixins";
+@import "variables";
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #4a4a4a;
+  font-size: 16px;
+}
+
+.wrap {
+  min-height: 100vh;
+  padding-top: 128px;
+}
+
+.center {
+  padding: 0 calc(50% - 590px);
+}
+
+.catalog {
+
+  &__heading {
+    text-align: center;
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  &__box {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: 272px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 3px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    @include BoxShadow(2);
+
+    &:hover {
+      @include BoxShadow(9);
+    }
+
+    &__wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__image {
+      display: inline-block;
+      align-self: center;
+      width: 200px;
+      height: 200px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &__desc {
+      margin-top: 16px;
+    }
+
+    &__name {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      color: #4a4a4a;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: $brandColor;
+      }
+    }
+
+    &__price {
+      margin-top: 16px;
+      margin-bottom: 8px;
+      font-size: 21px;
+      line-height: 26px;
+      font-weight: 600;
+      letter-spacing: .3px;
+    }
+
+    &__rate {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 16px;
+
+      &__item {
+
+        &:not(:last-child) {
+          margin-right: 2px;
+        }
+
+        i {
+          color: $brandRate;
+        }
+      }
+    }
+
+    &__btn {
+      text-align: center;
+    }
+
+    &__addToCard {
+      display: inline-block;
+      padding: 12px 16px;
+      border-radius: 5px;
+      border: 2px solid $brandColor;
+      background-color: $brandColor;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .4px;
+      color: white;
+      transition: all .3s ease;
+
+      &:hover {
+        background-color: $brandColorHover;
+      }
+
+      &:active {
+        color: $brandColorHover;
+        background-color: white;
+      }
+    }
+
+    &__iphone12pro512gold {
+      background-image: $iPhone12proGold;
+    }
+
+    &__iphone12red256 {
+      background-image: $iPhone12red;
+    }
+
+    &__iphone12white256 {
+      background-image: $iPhone12white;
+    }
+
+    &__iphone12green128 {
+      background-image: $iPhone12green;
+    }
+  }
+}
